@@ -17,11 +17,17 @@ This project utilizes the following hardware:
 
 ## Setup
 
-First, you'll need to create a Google Calendar API project.  There's a good tutorial [here](https://developers.google.com/calendar/quickstart/python).  Download the `credentials.json` file for the project - you'll need it to allow the project to access your Google calendar - and then either copy the file to your container and place it in the `/app` directory, or mount the file to the contianer from the host.
+First, you'll need to create a Google Calendar API project.  There's a good tutorial [here](https://developers.google.com/calendar/quickstart/python).  Download the `credentials.json` file for the project - you'll need it to allow the project to access your Google calendar - and then either copy the file to your container and place it in the `/app` directory, or mount the file to the container from the host.
 
-On the Raspberry Pi Zero W with the Unicorn HAT Mini, run the following command to link the app to your Google Calendar:
-
-`docker run -it --name office-status --privileged --restart=always --volume $(pwd)/credentials.json:/app/credentials.json:ro alannix/office-status:latest`
+On the Raspberry Pi Zero W with the Unicorn HAT Mini, run the following command to download and run the container:
+```
+docker run -it \
+           --name office-status \
+           --privileged \
+           --restart=always \
+           --volume $(pwd)/credentials.json:/app/credentials.json:ro \
+           alannix/office-status:latest
+```
 
 This will prompt you to visit a URL to authorize the script to have access to your Google Calendar.  Once you have gone through the authorization process, you'll receive an authorization code that you'll need to provide back to the application.  The authorization code is stored within the container, so you can safely exit (Control + c) and the container will restart and continue to run.
 
