@@ -11,8 +11,8 @@ SCOPES = [
     'https://www.googleapis.com/auth/calendar.events.readonly'
 ]
 
-CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), 'credentials.json')
-TOKEN_FILE = os.path.join(os.path.dirname(__file__), 'token.pickle')
+CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'credentials.json')
+TOKEN_FILE = os.path.join(os.path.dirname(__file__), 'data', 'token.pickle')
 
 def get_calendar_service():
     creds = None

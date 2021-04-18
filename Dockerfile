@@ -5,6 +5,7 @@ WORKDIR /app
 ADD requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN mkdir /app/data
 
 ADD *.py /app/
 
