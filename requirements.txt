@@ -5,3 +5,4 @@ pytz>=2020.4
 RPi.GPIO~=0.7
 rsa>=4.7 # not directly required, pinned by Snyk to avoid a vulnerability
 unicornhatmini~=0.0
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
